@@ -1,0 +1,330 @@
+<main>
+  <div class="position-relative">
+     <!-- Hero for FREE version -->
+     <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-primary">
+           <span class="span-150"></span>
+           <span class="span-50"></span>
+           <span class="span-50"></span>
+           <span class="span-75"></span>
+           <span class="span-100"></span>
+           <span class="span-75"></span>
+           <span class="span-50"></span>
+           <span class="span-100"></span>
+           <span class="span-50"></span>
+           <span class="span-100"></span>
+        </div>
+        <div class="container shape-container d-flex align-items-center py-lg">
+           <div class="col px-0">
+              <div class="row align-items-center justify-content-center">
+                 <div class="col-lg-6 text-center">
+                    <img src="./assets/img/brand/laundry-wheel-logo.png" style="width: 200px;" class="img-fluid">
+                    <p class="lead text-white">A one-stop app for all your laundry needs.</p>
+                    <div class="btn-wrapper mt-5" *ngIf = !isLoggedin>
+                       <!-- <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-index-header" class="btn btn-lg btn-white btn-icon mb-3 mb-sm-0">
+                          <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                          <span class="btn-inner--text">Download Angular</span>
+                          </a>
+                          <a href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-index-header" class="btn btn-lg btn-github btn-icon mb-3 mb-sm-0" target="_blank">
+                          <span class="btn-inner--icon"><i class="fa fa-github"></i></span>
+                          <span class="btn-inner--text">
+                            <span class="text-warning">Star us</span> on Github</span>
+                          </a> -->
+                       <a [routerLink]="['/login']" class="btn btn-success" style = "width: 112px;">Login</a>
+                       <a [routerLink]="['/register']" class="btn btn-white">Register</a>
+                    </div>
+                    <div class="btn-wrapper mt-5" *ngIf = "isLoggedin && !isAdmin">                    
+                     <a [routerLink]="['/user-profile']" class="btn btn-success">My Profile</a>
+                  </div>
+                    <div class="btn-wrapper mt-5" *ngIf = "isAdmin && isLoggedin " >                    
+                     <a [routerLink]="['/user-profile']" class="btn btn-success" style = "width: 155px">My Profile</a>
+                     <a [routerLink]="['/user-profile']" class="btn btn-success" >Admin portal</a>
+                  </div>
+                    <div class="mt-5" style = "margin-bottom: 5%;">
+                       <small class="text-white font-weight-bold mb-0 mr-2">Presented by</small>
+                       <img src="./assets/img/brand/favicon.png" style="height: 28px; padding-right: 5px;">
+                       <small class="text-white font-weight-bold mb-0 mr-2">Nikhil Surabhi</small>
+                    </div>
+                    <div class="row" style = "margin-bottom: 10%;">
+                      <div class="col-md-6 mb-5 mb-md-0">
+                        <div class="card card-lift--hover shadow border-0">
+                          <a [routerLink]="['/landing']" title="Landing Page">
+                            <img src="./assets/img/brand/play-store.png" class="card-img">
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-5 mb-lg-0">
+                        <div class="card card-lift--hover shadow border-0">
+                          <a [routerLink]="['/user-profile']" title="Profile Page">
+                            <img src="./assets/img/brand/app-store.png" class="card-img">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <!-- SVG separator -->
+        <div class="separator separator-bottom separator-skew zindex-100">
+           <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+              <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+           </svg>
+        </div>
+     </section>
+  </div>
+  <section class="section section-lg pt-lg-0 mt--200" style="margin-bottom: 10%;">
+     <div class="container">
+        <div class="row justify-content-center">
+           <div class="col-lg-12" style = "margin-bottom: 10%;">
+              <div class="row row-grid">
+                 <div class="col-lg-4">
+                    <div class="card card-lift--hover shadow border-0">
+                       <div class="card-body py-5">
+                          <h6 class="text-primary text-uppercase">Steam Iron</h6>
+                          <img src="../../assets/img/icons/common/iron box.png" class="image">
+                          <p class="description mt-3" style="text-align:justify">Amazingly pressed clothes. Done with professional grade ironing board, the highest quality steam iron, hand steamer, steam press and roller press.</p>
+                          <div>
+                             <span class="badge badge-pill badge-primary">Top Wear</span>
+                             <span class="badge badge-pill badge-primary">Bottom Wear</span>
+                             <span class="badge badge-pill badge-primary">Saree</span>
+                             <span class="badge badge-pill badge-primary">Blouse</span>
+                          </div>
+                          <button class="btn btn-primary mt-4" (click)="openSchedulePickup()">Learn more</button>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-4">
+                    <div class="card card-lift--hover shadow border-0">
+                       <div class="card-body py-5">
+                          
+                          <h6 class="text-success text-uppercase">Wash by Piece</h6>
+                          <img src="../../assets/img/icons/common/Laundryy.png" class="image">
+
+                          <p class="description mt-3" style="text-align:justify">You only pay for the number of clothes we wash for you. We use the most environmentally friendly cleaning process.<br>&nbsp;</p>
+                          <div>
+                           <span class="badge badge-pill badge-primary">Top Wear</span>
+                           <span class="badge badge-pill badge-primary">Bottom Wear</span>
+                           <span class="badge badge-pill badge-primary">Saree</span>
+                           <span class="badge badge-pill badge-primary">Blouse</span>
+                          </div>
+                          <button (click)="openSchedulePickup()" class="btn btn-success mt-4">Learn more</button>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-4">
+                    <div class="card card-lift--hover shadow border-0">
+                       <div class="card-body py-5">
+                          
+                          <h6 class="text-warning text-uppercase">Wash by KG</h6>
+                          <img src="../../assets/img/icons/common/weighing machine.png" class="image">
+
+                          <p class="description mt-3" style="text-align:justify">We weigh your laundry and bill you with the lowest possible rate. We wash both wearables and  non wearables like curtains and bedsheets.</p>
+                          <div>
+                           <span class="badge badge-pill badge-primary">Shirts</span>
+                           <span class="badge badge-pill badge-primary">Pants</span>
+                           <span class="badge badge-pill badge-primary">Bedsheets</span>
+                           <span class="badge badge-pill badge-primary">Carpets/Curtains</span>
+                          </div>
+                          <button (click)="openSchedulePickup()"class="btn btn-warning mt-4">Learn more</button>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="col-lg-12">
+              <div class="row row-grid">
+                 <div class="col-lg-4">
+                    <div class="card card-lift--hover shadow border-0">
+                       <div class="card-body py-5">
+                          
+                          <h6 class="text-primary text-uppercase">Wash and Iron</h6>
+                          <img src="../../assets/img/icons/common/wash and iron -.png" class="image">
+
+                          <p class="description mt-3" style="text-align:justify">Washing and Ironing goes hand in hand. We professionally wash your clothes and iron them. We will also pack the clothes with premium packing method.</p>
+                          <div>
+                           <span class="badge badge-pill badge-primary">Top Wear</span>
+                           <span class="badge badge-pill badge-primary">Bottom Wear</span>
+                           <span class="badge badge-pill badge-primary">Saree</span>
+                           <span class="badge badge-pill badge-primary">Blouse</span>
+                          </div>
+                          <button (click)="openSchedulePickup()" class="btn btn-primary mt-4">Learn more</button>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-4">
+                    <div class="card card-lift--hover shadow border-0">
+                       <div class="card-body py-5">
+                          
+                          <h6 class="text-success text-uppercase">Dry Cleaning</h6>
+                          <img src="../../assets/img/icons/common/Dry cleaning.svg" class="image">
+
+                          <p class="description mt-3" style="text-align:justify">Dress for success. Our dry cleaning process ensures to remove all the stubborn stains from your clothes.<br>&nbsp; </p>
+                          <div>
+                           <span class="badge badge-pill badge-primary">Shirts</span>
+                           <span class="badge badge-pill badge-primary">Suits</span>
+                           <span class="badge badge-pill badge-primary">Saree</span>
+                           <span class="badge badge-pill badge-primary">Blouse</span>
+                           <span class="badge badge-pill badge-primary">Other</span>
+
+                          </div>
+                          <button (click)="openSchedulePickup()" class="btn btn-success mt-4">Learn more</button>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-4">
+                    <div class="card card-lift--hover shadow border-0">
+                       <div class="card-body py-5">
+                         
+                          <h6 class="text-warning text-uppercase">Easy Service</h6>
+                          <img src="../../assets/img/icons/common/delivery.png" class="image">
+
+                          <p class="description mt-3" style="text-align:justify">Save Time: you need not sort and count the clothes. Schedule a pick-up with just two taps, rest is taken care by our professionals. <br>&nbsp;</p>
+                          <div>
+                           <span class="badge badge-pill badge-primary">Shirts</span>
+                           <span class="badge badge-pill badge-primary">Suits</span>
+                           <span class="badge badge-pill badge-primary">Saree</span>
+                           <span class="badge badge-pill badge-primary">Blouse</span>
+                           <span class="badge badge-pill badge-primary">Other</span>
+                          </div>
+                          <button (click)="openSchedulePickup()" class="btn btn-warning mt-4">Learn more</button>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+  <section class="section section-lg pt-lg-0 mt--200" style = "text-align: center; margin-bottom: 12%;">
+     <div class="container">
+        <h2 class="mt-lg mb-5">
+           <span >How it works?</span>
+        </h2>
+        <div class="row">
+           <div class="col-sm-4 col-6 mt-5 mt-sm-0">
+              <img src="./assets/img/brand/schedule_pickup.jpg" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="max-width: 50%; max-height: 50%">
+              <h5 class="mb-0"><b>SCHEDULE A COLLECTION</b></h5>
+             <p class="description">Easily choose collection & delivery times at your convenience, including late evening and weekends.</p>
+           </div>
+           <div class="col-sm-4 col-6 mt-5 mt-sm-0">
+              <img src="./assets/img/icons/common/delivery boy.png" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="max-width: 50%; max-height: 50%">
+              <h5 class="mb-0"><b>A DRIVER ARRIVES </b></h5>
+             <p class="description">Ousr drivers bring your items to our cleaning partners, where we take utmost care to ensure great results.</p>
+           </div>
+           <div class="col-sm-4 col-6 mt-5 mt-sm-0">
+              <img src="./assets/img/brand/delivery.jpg" alt="Raised circle image" class="img-fluid rounded-circle shadow-lg" style="max-width: 50%; max-height: 50%">
+              <h5 class="mb-0"><b>GET CLEAN LAUNDRY</b> </h5>
+             <p class="description">Your clothes are back with you 24 hour later - all clean and ready for action. Contactless delivery available.</p>
+           </div>
+        </div>
+     </div>
+  </section>
+  <section class="section section-lg pt-lg-0 mt--200" style = "text-align: center; margin-bottom: 10%;">
+     <button (click)="openSchedulePickup()" class="btn btn-success">SCHEDULE A PICKUP</button>
+  </section>
+
+
+
+  <div class="container" style = "margin-bottom: 25%;">
+    <h3 class="h4 text-success font-weight-bold mb-4" style = "text-align: center;">Our Services & prices</h3>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <!-- Tabs with icons -->
+        <div class="mb-3" style = "text-align: center;"> 
+          <small class="text-uppercase font-weight-bold" >By Piece</small>
+        </div>
+          <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                  <i class="ni ni-cloud-upload-96 mr-2"></i> Home
+                </ng-template>
+                  <ng-template ngbTabContent>
+                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                    <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                  </ng-template>
+              </ngb-tab>
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                  <i class="ni ni-bell-55 mr-2"></i> Profile
+                </ng-template>
+                  <ng-template ngbTabContent>
+                      <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                  </ng-template>
+              </ngb-tab>
+              <ngb-tab>
+                <ng-template ngbTabTitle>
+                    <i class="ni ni-calendar-grid-58 mr-2"></i> Messages
+                </ng-template>
+                  <ng-template ngbTabContent>
+                      <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                  </ng-template>
+              </ngb-tab>
+          </ngb-tabset>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <!-- Menu -->
+        <div class="mb-3" style = "text-align: center;">
+          <small class="text-uppercase font-weight-bold">By KGs</small>
+        </div>
+        <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
+            <ngb-tab title="Home">
+              <ng-template ngbTabContent>
+                <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Profile">
+              <ng-template ngbTabContent>
+                  <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Messages">
+              <ng-template ngbTabContent>
+                  <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+              </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+      
+      <div class="row justify-content-between align-items-center">
+
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h1 class="text-black font-weight-light">Contactless Delivery</h1>
+           <p class="description" style = "text-align: center;">Your safety is our priority.</p>
+          <p class="lead text-black mt-4">No Direct Contact</p>
+         <p class="description">For your peace of mind, you can request a contactless delivery. We'll collect and deliver you clothing to a location of your choice.</p>
+          <p class="lead text-black mt-4">We'll Keep You Updated</p>
+         <p class="description">We will keep you updated every step of the way. You can track your driver as they're en route to your address and contact them by text or phone.</p> 
+          <p class="lead text-black mt-4">We're Monitoring the Situation</p>
+         <p class="description">We are constantly reviewing the most up to date advice from the Government to best understand how we can continue to support you in a safe way. Your safety is our priority.</p>
+
+          <!-- <a href="https://demos.creative-tim.com/argon-design-system-angular/documentation/alerts?ref=adsa-bootstrap-carousel" class="btn btn-white mt-4">See all components</a> -->
+        </div>
+        <div class="col-lg-6 mb-lg-auto" style = "padding-top: 12%;">
+          <div class="rounded shadow-lg overflow-hidden transform-perspective-right">
+            <ngb-carousel style = "text-align: center;">
+                <ng-template ngbSlide>
+                  <img class="img-fluid" src="assets/img/brand/contactless_delivery_1.jpg" alt="First slide">
+                </ng-template>
+                <ng-template ngbSlide>
+                  <img class="img-fluid" src="assets/img/brand/contactless_delivery_2.jpg" alt="Second slide">
+                </ng-template>
+                <ng-template ngbSlide>
+                  <img class="img-fluid" src="assets/img/brand/contactless_delivery_3.jpg" alt="First slide">
+                </ng-template>
+                <ng-template ngbSlide>
+                  <img class="img-fluid" src="assets/img/brand/contactless_delivery_4.jpg" alt="Second slide">
+                </ng-template>
+
+            </ngb-carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- <app-sections></app-sections> -->
+</main>
