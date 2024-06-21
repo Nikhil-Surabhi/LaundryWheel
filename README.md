@@ -34,3 +34,15 @@ HOMEPAGE:
 
 AWS SECURITY GROUPS:
 ![AWS_security_groups](https://github.com/Nikhil-Surabhi/LaundryWheel/assets/131053472/3349b76b-0f5e-48b5-9b44-2dcd135b62c2)
+
+MOBILE TESTING:
+
+![LW_Mobile_Real_tesing 3](https://github.com/Nikhil-Surabhi/LaundryWheel/assets/131053472/9b235c4b-661e-418e-9b5d-e4327ae83e11)
+![LW_Mobile_Real_tesing 1](https://github.com/Nikhil-Surabhi/LaundryWheel/assets/131053472/3e22a794-9ded-4d13-8cdb-4a5bffc545dd)
+![LW_Mobile_Real_tesing 2](https://github.com/Nikhil-Surabhi/LaundryWheel/assets/131053472/00d154f1-fcdd-449b-8633-b14d8983e107)
+
+REAL TIME TESTING (iOS):
+
+https://github.com/Nikhil-Surabhi/LaundryWheel/assets/131053472/ee4a8583-6b94-4dcc-9e43-14abff2f6c47
+
+
